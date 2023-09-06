@@ -3,12 +3,16 @@ import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
 	const { budget,dispatch,expenses,currency} = useContext(AppContext);
+
     const max_Val = 20000;
+
 	const changeBudget = (val)=>{
 		const totalExpenses = expenses.reduce((total, item) => {
 			return (total += item.cost);
 		}, 0);
-        if(val<totalExpenses) {
+
+		
+		if(val<totalExpenses) {
 			alert("You cannot reduce the budget that is already allocated!");
 		} 
         
@@ -23,6 +27,7 @@ const Budget = () => {
 			})
 			}
 	}
+	
 	return (
 		<div className='alert alert-secondary'>
             <span>Budget: {currency}</span>
