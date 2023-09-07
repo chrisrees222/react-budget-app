@@ -38,3 +38,5 @@ const Currency = (props) => {
 };
 
 export default Currency;
+
+export default Currency;
